@@ -1,0 +1,333 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="template_pca10056" target="8" version="2">
+  <project Name="tst">
+    <configuration
+      Name="Common"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_heap_size="8192"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="8192"
+      arm_linker_treat_warnings_as_errors="No"
+      arm_simulator_memory_simulation_parameter="RWX 00000000,00100000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
+      arm_target_device_name="nRF52840_xxAA"
+      arm_target_interface_type="SWD"
+      c_preprocessor_definitions="BOARD_PCA10056;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;MBEDTLS_CONFIG_FILE=&quot;nrf_crypto_mbedtls_config.h&quot;;NO_VTOR_CONFIG;NRF52840_XXAA;NRF_CRYPTO_MAX_INSTANCE_COUNT=1;SWI_DISABLE0;uECC_ENABLE_VLI_API=0;uECC_OPTIMIZATION_LEVEL=3;uECC_SQUARE_FUNC=0;uECC_SUPPORT_COMPRESSED_POINT=0;uECC_VLI_NATIVE_LITTLE_ENDIAN=1;"
+      c_user_include_directories="$(ProjectDir)/headers;$(ProjectDir)/RTT;$(ProjectDir)/nRF5_SDK_15.2.0/components;$(ProjectDir)/nRF5_SDK_15.2.0/components/boards;$(ProjectDir)/nRF5_SDK_15.2.0/components/drivers_nrf/nrf_soc_nosd;$(ProjectDir)/nRF5_SDK_15.2.0/components/drivers_nrf/usbd;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/atomic;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/atomic_fifo;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/balloc;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/block_dev;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/bsp;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/button;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/cli;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/cli/uart;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crc16;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crc32;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310_bl;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cifra;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/micro_ecc;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/nrf_hw;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/nrf_sw;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/csense;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/csense_drv;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/delay;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/ecc;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/experimental_section_vars;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/experimental_task_manager;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/fds;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/fifo;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/fstorage;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/gfx;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/gpiote;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hardfault;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hardfault/nrf52;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hci;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/led_softblink;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/log;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/log/src;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/low_power_pwm;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/mem_manager;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/memobj;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/mpu;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/mutex;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/pwm;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/pwr_mgmt;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/queue;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/ringbuf;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/scheduler;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/sdcard;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/slip;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/sortlist;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/spi_mngr;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/stack_guard;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/stack_info;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/strerror;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/timer;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/twi_mngr;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/twi_sensor;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/uart;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/audio;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/cdc;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/cdc/acm;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid/generic;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid/kbd;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid/mouse;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/msc;$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/util;$(ProjectDir)/nRF5_SDK_15.2.0/components/toolchain/cmsis/include;../../..;$(ProjectDir)/nRF5_SDK_15.2.0/external/cifra_AES128-EAX;$(ProjectDir)/nRF5_SDK_15.2.0/external/fnmatch;$(ProjectDir)/nRF5_SDK_15.2.0/external/fprintf;$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/include;$(ProjectDir)/nRF5_SDK_15.2.0/external/micro-ecc/micro-ecc;$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_cc310/include;$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_oberon;$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_oberon/include;$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_tls/mbedtls/nrf_crypto/config;$(ProjectDir)/nRF5_SDK_15.2.0/external/protothreads;$(ProjectDir)/nRF5_SDK_15.2.0/external/protothreads/pt-1.4;$(ProjectDir)/nRF5_SDK_15.2.0/external/thedotfactory_fonts;$(ProjectDir)/nRF5_SDK_15.2.0/external/utf_converter;$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx;$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy;$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx;$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/include;$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/hal;$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/mdk;../config;"
+      debug_register_definition_file="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/mdk/nrf52840.svd"
+      debug_start_from_entry_point_symbol="No"
+      debug_target_connection="J-Link"
+      gcc_debugging_level="Level 3"
+      gcc_entry_point="Reset_Handler"
+      linker_output_format="hex"
+      linker_printf_fmt_level="long"
+      linker_printf_width_precision_supported="Yes"
+      linker_section_placement_file="flash_placement.xml"
+      linker_section_placement_macros="FLASH_PH_START=0x0;FLASH_PH_SIZE=0x100000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x40000;FLASH_START=0x0;FLASH_SIZE=0x100000;RAM_START=0x20000000;RAM_SIZE=0x40000"
+      linker_section_placements_segments="FLASH RX 0x0 0x100000;RAM RWX 0x20000000 0x40000"
+      macros="CMSIS_CONFIG_TOOL=$(ProjectDir)/nRF5_SDK_15.2.0/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Segger Startup Files">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s" />
+    </folder>
+    <folder Name="nrf_cc310">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_cc310/lib/libnrf_cc310_0.9.10.a" />
+    </folder>
+    <folder Name="Board Definition">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/boards/boards.c" />
+    </folder>
+    <folder Name="nRF_Crypto backend uECC">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/micro_ecc/micro_ecc_backend_ecc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/micro_ecc/micro_ecc_backend_ecdh.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/micro_ecc/micro_ecc_backend_ecdsa.c" />
+    </folder>
+    <folder Name="nRF_Drivers">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_clock.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_power.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_ppi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_rng.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_spi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_spis.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_swi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_twi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_uart.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/drivers_nrf/usbd/nrf_drv_usbd.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/hal/nrf_nvmc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/drivers_nrf/nrf_soc_nosd/nrf_soc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_clock.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_comp.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_gpiote.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_i2s.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_lpcomp.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_pdm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_power.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_power_clock.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_ppi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/prs/nrfx_prs.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_pwm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_qdec.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_qspi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_rng.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_rtc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_saadc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_spi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_spim.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_spis.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_swi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_timer.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_twi.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_twim.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_twis.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_uart.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_uarte.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_wdt.c" />
+    </folder>
+    <folder Name="nRF_Crypto backend cifra">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cifra/cifra_backend_aes_aead.c" />
+    </folder>
+    <folder Name="nRF_External">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/thedotfactory_fonts/orkney24pts.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/thedotfactory_fonts/orkney8pts.c" />
+    </folder>
+    <folder Name="Application">
+      <file file_name="$(ProjectDir)/source/main.c" />
+      <file file_name="$(ProjectDir)/headers/sdk_config.h" />
+      <folder Name="Drivers">
+        <file file_name="source/touch.c" />
+      </folder>
+    </folder>
+    <folder Name="Board Support">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/bsp/bsp.c" />
+    </folder>
+    <folder Name="nRF_Crypto backend nRF HW">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_init.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.c" />
+    </folder>
+    <folder Name="nRF_Drivers_External">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/twi_sensor/nrf_twi_sensor.c" />
+    </folder>
+    <folder Name="nRF_micro-ecc">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/micro-ecc/nrf52hf_armgcc/armgcc/micro_ecc_lib_nrf52.a" />
+    </folder>
+    <folder Name="nRF_Crypto backend CC310">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_aes.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_aes_aead.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_chacha_poly_aead.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_ecc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_ecdh.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_ecdsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_eddsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_hash.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_hmac.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_init.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_mutex.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_rng.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/cc310/cc310_backend_shared.c" />
+    </folder>
+    <folder Name="nRF_Crypto backend Oberon">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon/oberon_backend_chacha_poly_aead.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon/oberon_backend_ecc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon/oberon_backend_ecdh.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon/oberon_backend_ecdsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon/oberon_backend_eddsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon/oberon_backend_hash.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/oberon/oberon_backend_hmac.c" />
+    </folder>
+    <folder Name="nRF_Crypto backend mbed TLS">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_aes.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_aes_aead.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_ecc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_ecdh.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_ecdsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_hash.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_hmac.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/backend/mbedtls/mbedtls_backend_init.c" />
+    </folder>
+    <folder Name="nRF_Oberon_Crypto">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_oberon/lib/nrf52/liboberon_2.0.5.a" />
+    </folder>
+    <folder Name="nRF_TLS">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/aes.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/aesni.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/arc4.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/asn1parse.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_tls/mbedtls/replacements/asn1write.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/base64.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/bignum.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/blowfish.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/camellia.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ccm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/certs.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/cipher.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/cipher_wrap.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/cmac.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ctr_drbg.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/debug.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/des.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/dhm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ecdh.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ecdsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ecp.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ecp_curves.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/entropy.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/entropy_poll.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/error.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/gcm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/havege.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/hmac_drbg.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/md.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/md2.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/md4.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/md5.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/md_wrap.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/memory_buffer_alloc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/oid.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/padlock.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pem.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pk.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pk_wrap.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pkcs11.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pkcs12.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pkcs5.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pkparse.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/pkwrite.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/platform.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ripemd160.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/rsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/sha1.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/sha256.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/sha512.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ssl_cache.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ssl_ciphersuites.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ssl_cli.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ssl_cookie.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/nrf_tls/mbedtls/replacements/ssl_srv.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ssl_ticket.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/ssl_tls.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/threading.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/version.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/version_features.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/x509.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/x509_create.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/x509_crl.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/x509_crt.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/x509_csr.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/mbedtls/library/xtea.c" />
+    </folder>
+    <folder Name="nRF_Log">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/log/src/nrf_log_frontend.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/log/src/nrf_log_str_formatter.c" />
+    </folder>
+    <folder Name="nRF_Core">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/mpu/nrf_mpu.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/stack_guard/nrf_stack_guard.c" />
+    </folder>
+    <folder Name="nRF_Libraries">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/button/app_button.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/util/app_error.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/util/app_error_handler_gcc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/util/app_error_weak.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/fifo/app_fifo.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/gpiote/app_gpiote.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/pwm/app_pwm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/scheduler/app_scheduler.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/sdcard/app_sdcard.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/timer/app_timer.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/uart/app_uart_fifo.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/app_usbd.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/audio/app_usbd_audio.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/cdc/acm/app_usbd_cdc_acm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/app_usbd_core.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid/app_usbd_hid.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid/generic/app_usbd_hid_generic.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid/kbd/app_usbd_hid_kbd.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/hid/mouse/app_usbd_hid_mouse.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/class/msc/app_usbd_msc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/usbd/app_usbd_string_desc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/util/app_util_platform.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/cifra_AES128-EAX/blockwise.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/cifra_AES128-EAX/cifra_cmac.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/cifra_AES128-EAX/cifra_eax_aes.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crc16/crc16.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crc32/crc32.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/cifra_AES128-EAX/eax.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/fds/fds.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/fnmatch/fnmatch.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/cifra_AES128-EAX/gf128.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hardfault/nrf52/handler/hardfault_handler_gcc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hardfault/hardfault_implementation.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hci/hci_mem_pool.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hci/hci_slip.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/hci/hci_transport.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/led_softblink/led_softblink.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/low_power_pwm/low_power_pwm.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/mem_manager/mem_manager.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/cifra_AES128-EAX/modes.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/util/nrf_assert.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/atomic_fifo/nrf_atfifo.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/atomic/nrf_atomic.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/balloc/nrf_balloc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/cli/nrf_cli.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/cli/uart/nrf_cli_uart.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/csense/nrf_csense.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/csense_drv/nrf_drv_csense.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/fprintf/nrf_fprintf.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/fprintf/nrf_fprintf_format.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/fstorage/nrf_fstorage.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/fstorage/nrf_fstorage_nvmc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/gfx/nrf_gfx.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/memobj/nrf_memobj.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/pwr_mgmt/nrf_pwr_mgmt.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/queue/nrf_queue.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/ringbuf/nrf_ringbuf.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/experimental_section_vars/nrf_section_iter.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/sortlist/nrf_sortlist.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/spi_mngr/nrf_spi_mngr.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/strerror/nrf_strerror.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/twi_mngr/nrf_twi_mngr.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/slip/slip.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/experimental_task_manager/task_manager.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/experimental_task_manager/task_manager_core_armgcc.S" />
+    </folder>
+    <folder Name="nRF_Crypto">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_aead.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_aes.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_aes_shared.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_ecc.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_ecdh.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_ecdsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_eddsa.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_error.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_hash.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_hkdf.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_hmac.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_init.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_rng.c" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/components/libraries/crypto/nrf_crypto_shared.c" />
+    </folder>
+    <folder Name="None">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/mdk/ses_startup_nrf52840.s" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/mdk/ses_startup_nrf_common.s" />
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/modules/nrfx/mdk/system_nrf52840.c" />
+    </folder>
+    <folder Name="UTF8/UTF16 converter">
+      <file file_name="$(ProjectDir)/nRF5_SDK_15.2.0/external/utf_converter/utf.c" />
+    </folder>
+    <file file_name="RTT/SEGGER_RTT.c" />
+    <file file_name="RTT/SEGGER_RTT_SES.c" />
+  </project>
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_optimization_level="Optimize For Size" />
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG; DEBUG_NRF"
+    gcc_optimization_level="None" />
+</solution>
