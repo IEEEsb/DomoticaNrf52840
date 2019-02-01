@@ -99,6 +99,11 @@
       <file file_name="$(ProjectDir)/headers/sdk_config.h" />
       <folder Name="Drivers">
         <file file_name="source/touch.c" />
+        <file file_name="source/identification_controller.c" />
+      </folder>
+      <folder Name="headers">
+        <file file_name="headers/touch.h" />
+        <file file_name="headers/identification_controller.h" />
       </folder>
     </folder>
     <folder Name="Board Support">

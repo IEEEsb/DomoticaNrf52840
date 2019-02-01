@@ -2,7 +2,7 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <BreakpointListItem trigger="" line="92" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="source/touch.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="67" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="source/main.c" useHWbreakpoint="false"/>
   <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
@@ -26,8 +26,16 @@
   <ProjectSessionItem path="template_pca10056;tst"/>
   <ProjectSessionItem path="template_pca10056;tst;Application"/>
   <ProjectSessionItem path="template_pca10056;tst;Application;Drivers"/>
+  <ProjectSessionItem path="template_pca10056;tst;Application;headers"/>
+  <ProjectSessionItem path="template_pca10056;tst;nrf_cc310"/>
   <ProjectSessionItem path="template_pca10056;tst;nRF_Drivers"/>
+  <ProjectSessionItem path="template_pca10056;tst;nRF_Libraries"/>
+  <ProjectSessionItem path="template_pca10056;tst;nRF_Log"/>
+  <ProjectSessionItem path="template_pca10056;tst;nRF_micro-ecc"/>
+  <ProjectSessionItem path="template_pca10056;tst;nRF_Oberon_Crypto"/>
+  <ProjectSessionItem path="template_pca10056;tst;nRF_TLS"/>
   <ProjectSessionItem path="template_pca10056;tst;Segger Startup Files"/>
+  <ProjectSessionItem path="template_pca10056;tst;UTF8/UTF16 converter"/>
  </Project>
  <Register1>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/msp;CPU/psp;CPU/cfbp" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="tst" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -61,15 +69,17 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0/external/mbedtls/library/arc4.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_power.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_swi.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="107" useTextEdit="1" useBinaryEdit="0" left="0" path="source/main.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="91" useTextEdit="1" useBinaryEdit="0" left="0" path="source/touch.c" selected="0" top="70" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="5593" useTextEdit="1" useBinaryEdit="0" left="0" path="headers/sdk_config.h" selected="0" top="5552" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="38" y="109" useTextEdit="1" useBinaryEdit="0" left="0" path="source/main.c" selected="1" top="84" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="24" useTextEdit="1" useBinaryEdit="0" left="0" path="C:/Users/jcala/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/tools.xml" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="121" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0/integration/nrfx/legacy/nrf_drv_uart.h" selected="0" top="87" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="227" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0/modules/nrfx/drivers/include/nrfx_uart.h" selected="0" top="211" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1" useTextEdit="1" useBinaryEdit="0" left="0" path="template_pca10056.emProject" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="18" useTextEdit="1" useBinaryEdit="0" left="0" path="template_pca10056.emProject" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="986" useTextEdit="1" useBinaryEdit="0" left="0" path="RTT/SEGGER_RTT.c" selected="0" top="965" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="614" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0/modules/nrfx/drivers/src/nrfx_uart.c" selected="0" top="585" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="37" y="28" useTextEdit="1" useBinaryEdit="0" left="0" path="source/identification_controller.c" selected="0" top="15" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="headers/touch.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditRight" x="31" y="3" useTextEdit="1" useBinaryEdit="0" left="0" path="headers/identification_controller.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditRight" x="10" y="248" useTextEdit="1" useBinaryEdit="0" left="0" path="source/touch.c" selected="0" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="tst" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="G:/Nordic/testProject/source" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="tst" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="G:/Nordic/testProject/headers" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

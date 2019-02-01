@@ -57,6 +57,7 @@
 #include "nrf_gpio.h"
 #include "touch.h"
 #include "SEGGER_RTT.h"
+#include "identification_controller.h"
 /**
  * @brief Function for application main entry.
  */
@@ -98,23 +99,27 @@ void config_uart()
 int main(void)
 {
     /* Configure board. */
-    SEGGER_RTT_WriteString(0, "HOLA");
-    bsp_board_init(BSP_INIT_LEDS);
+        SEGGER_RTT_WriteString(0, "HOLA");
+        bsp_board_init(BSP_INIT_LEDS);
 	bsp_board_leds_off();
 	nrf_delay_ms(500);
 	bsp_board_leds_on();
 	//Uart configuration
 	config_uart();
-        touch_open(0);
-        touch_bakcklight(1);
-    while (true)
-    {
-        for (int i = 0; i < LEDS_NUMBER; i++)
+        gt511c3_initialize(); 
+        gt511c3_reset_data();
+        identification_enroll_user(1);
+        gt511c3_deinitialize();
+        gt511c3_initialize();
+        identification_check(1);
+        while (true)
         {
-            bsp_board_led_invert(i);
-            nrf_delay_ms(500);
+            for (int i = 0; i < LEDS_NUMBER; i++)
+            {
+                bsp_board_led_invert(i);
+                nrf_delay_ms(500);
+            }
         }
-    }
 }
 
 /**

@@ -49,6 +49,7 @@
 "Output/tst Debug/Obj/orkney8pts.o"
 "Output/tst Debug/Obj/main.o"
 "Output/tst Debug/Obj/touch.o"
+"Output/tst Debug/Obj/identification_controller.o"
 "Output/tst Debug/Obj/bsp.o"
 "Output/tst Debug/Obj/nrf_hw_backend_init.o"
 "Output/tst Debug/Obj/nrf_hw_backend_rng.o"
