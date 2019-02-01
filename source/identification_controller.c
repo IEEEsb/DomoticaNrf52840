@@ -35,7 +35,7 @@ void gt511c3_deinitialize(void) {
   touch_close();
 }
 
-void identification_enroll_user(int id) {
+void gt511c3_enroll_user(int id) {
 
   int enrollment_mode;
   //Enrollment mode
@@ -45,34 +45,50 @@ void identification_enroll_user(int id) {
     enrollment_mode = TOUCH_SAVEMODE_ENABLE;
   }
   //Enrollment process
+  printf("BEGINING ENROLLMENT \n");
   touch_enroll_start(id);
-  printf("Press Finger (1)");
+  printf("Press Finger (1) \n");
   wait_for_finger();
   touch_capture_finger();
   touch_enroll_1();
-  printf("Release Finger (1)");
+  printf("Release Finger (1) \n");
   wait_for_finger_release();
-  printf("Press Finger (2)");
+  printf("Press Finger (2) \n");
   wait_for_finger();
   touch_capture_finger();
   touch_enroll_2();
-  printf("Release Finger (2)");
+  printf("Release Finger (2) \n");
   wait_for_finger_release();
-  printf("Press Finger (3)");
+  printf("Press Finger (3) \n");
   wait_for_finger();
   touch_capture_finger();
   touch_enroll_3(enrollment_mode);
-  printf("Release Finger (3)");
+  printf("Release Finger (3) \n");
   wait_for_finger_release();
-
+  printf("ENDING ENROLLMENT \n");
   //Verification process
-  identification_check(id);
+  gt511c3_is_id_enrolled(id);
 }
 
-void identification_check(int id) {
+int gt511c3_is_id_enrolled(int id) {
   if (touch_check_enrolled(id) == TOUCH_ENROLLED) {
-    printf("Success enrolled fingerprint (id %d)", id);
-    return;
+    printf("Success enrolled fingerprint (id %d) \n", id);
+    return GT511C3_IS_ENROLLED;
   }
-  printf("Error not enrolled fingerprint (id %d)", id);
+  printf("Error not enrolled fingerprint (id %d) \n", id);
+  return GT511C3_NOT_ENROLLED;
+}
+
+int gt511c3_identify_finger(){
+  printf("READY TO IDENTIFY \n");
+  printf("Press Finger \n");
+  wait_for_finger();
+  touch_capture_finger();
+  if(touch_identify() == TOUCH_IDENTIFICATION_CORRECT){
+    printf("CORRECTLY INDETIFIED \n");
+    printf("Release Finger \n");
+    return GT511C3_IDENTIFICATION_OK;
+  }
+  printf("Release Finger \n");
+  return GT511C3_IDENTIFICATION_ERROR;
 }

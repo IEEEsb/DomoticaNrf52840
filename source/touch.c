@@ -27,6 +27,7 @@
 #define  NACK_IS_ALREADY_USED 0x1005
 #define  NACK_ENROLL_FAILED 0x100D
 #define  NACK_BAD_FINGER 0x100C
+#define  NACK_IDENTIFY_FAILED 0x1007
 /****************************
 *	CMD CODES DEFINES       *
 *****************************/
@@ -43,6 +44,8 @@
 #define ISPRESSFINGER_CMD 0x26
 
 #define DELETE_ALL_FINGERPRINTS_CMD 0x41
+
+#define IDENTIFY_CMD 0x51
 
 #define CAPTUREFINGERPRINT_CMD 0x60
 
@@ -149,7 +152,23 @@ void process_nack(uint8_t* package, int len){
     case NACK_BAD_FINGER:
       printf("ERROR BAD FINGER FAILED \n");
       return;
+    case NACK_IDENTIFY_FAILED:
+      printf("ERROR INDENTIFY FAILED \n");
+      return;
+     case NACK_DB_IS_EMPTY:
+      printf("ERROR DB IS EMPTY \n");
+      return;
+     case NACK_DB_IS_FULL:
+      printf("ERROR DB IS FULL \n");
+      return;
   }
+}
+
+uint32_t get_reponse_parameter(uint8_t* package, int len){
+  if(len != 12 || package[8] != ACK){
+    printf("ERROR THIS IS NOT ACK \n");
+  }
+  return (package[4] & 0xFF) | ((package[5] & 0xFF) << 8) | ((package[6] & 0xFF) << 16) | ((package[7] & 0xFF) << 24);
 }
 
 /****************************
@@ -161,7 +180,7 @@ void touch_open(int verbose) {
     create_command_package(0, OPEN_CMD, command_packet);
     touch_send(command_packet, COMMAND_PACKET_LEN);
     if (rcv_ack(response_packet, REPONSE_PACKET_LEN, 1000) != UART_OK) {
-      printf("ERROR OPENNING CONNECTION TO TOUCH");
+      printf("ERROR OPENNING CONNECTION TO TOUCH \n");
       free(extra_info);
       return;
     }
@@ -169,23 +188,23 @@ void touch_open(int verbose) {
     create_command_package(1, OPEN_CMD, command_packet);
     touch_send(command_packet, COMMAND_PACKET_LEN);
     if (rcv_ack(response_packet, REPONSE_PACKET_LEN, 1000) != UART_OK) {
-      printf("ERROR OPENNING CONNECTION TO TOUCH");
+      printf("ERROR OPENNING CONNECTION TO TOUCH \n");
       free(extra_info);
       return;
     }
     touch_rcv((uint8_t *)extra_info, sizeof(dev_info), 2000);
   }
-  printf("CONNECTION OPENNED TO TOUCH");
+  printf("CONNECTION OPENNED TO TOUCH \n");
 }
 
 void touch_close(void){
   create_command_package(0, CLOSE_CMD, command_packet);
   touch_send(command_packet, COMMAND_PACKET_LEN);
   if (rcv_ack(response_packet, REPONSE_PACKET_LEN, 1000) != UART_OK) {
-    printf("ERROR CLOSING CONNECTION TO TOUCH");
+    printf("ERROR CLOSING CONNECTION TO TOUCH \n");
     return;
   }
-  printf("CONNECTION TO TOUCH CLOSED");
+  printf("CONNECTION TO TOUCH CLOSED \n");
 }
 
 void touch_bakcklight(int value) {
@@ -196,9 +215,9 @@ void touch_bakcklight(int value) {
     return;
   }
   if (value != 0) {
-    printf("Touch: Backlight ON");
+    printf("Touch: Backlight ON \n");
   } else {
-    printf("Touch: Backlight OFF");
+    printf("Touch: Backlight OFF \n");
   }
 }
 
@@ -300,26 +319,33 @@ int touch_check_enrolled(int id) {
 }
 
 int touch_enrolled_count() {
-  int ack_reponse_code;
-  //Non zero argument to capture best image posible
   create_command_package(0, ENROLLMENTCOUNT_CMD, command_packet);
   touch_send(command_packet, COMMAND_PACKET_LEN);
-  ack_reponse_code = rcv_ack(response_packet, REPONSE_PACKET_LEN, 1000);
-  switch (ack_reponse_code) {
-  case UART_OK:
-    return 1;
-  case UART_NACK_ERR:
-    return 0;
-  default:
-    return -1;
+  if (rcv_ack(response_packet, REPONSE_PACKET_LEN, 1000) != UART_OK) {
+    process_nack(response_packet,REPONSE_PACKET_LEN);
+    printf("error getting enrolled count \n");
+    return;
   }
+  return get_reponse_parameter(response_packet,REPONSE_PACKET_LEN);
 }
 
 void touch_delete_all_fingerprints() {
   create_command_package(0, DELETE_ALL_FINGERPRINTS_CMD, command_packet);
   touch_send(command_packet, COMMAND_PACKET_LEN);
   if (rcv_ack(response_packet, REPONSE_PACKET_LEN, 1000) != UART_OK) {
-    //Error Handling
+    process_nack(response_packet,REPONSE_PACKET_LEN);
+    printf("Error in deleting all fingerprints \n");
     return;
   }
+}
+
+int touch_identify(){
+  create_command_package(0, IDENTIFY_CMD, command_packet);
+  touch_send(command_packet, COMMAND_PACKET_LEN);
+  if (rcv_ack(response_packet, REPONSE_PACKET_LEN, 1000) != UART_OK) {
+    process_nack(response_packet,REPONSE_PACKET_LEN);
+    printf("Indetification Error \n");
+    return TOUCH_IDENTIFICATION_ERROR;
+  }
+  return TOUCH_IDENTIFICATION_CORRECT;
 }

@@ -20,6 +20,11 @@ enum TOUCH_SAVEMODE{
 enum TOUCH_ENROLLED {
   TOUCH_NOT_ENROLLED = 0,
   TOUCH_ENROLLED
+};      
+
+enum TOUCH_IDENTIFICATION {
+  TOUCH_IDENTIFICATION_CORRECT = 0,
+  TOUCH_IDENTIFICATION_ERROR
 };
 
 void touch_open(int verbose);
@@ -34,4 +39,5 @@ void touch_capture_finger();
 int touch_check_enrolled(int id);
 int touch_enrolled_count();
 void touch_delete_all_fingerprints();
+int touch_identify();
 #endif /* TOUCH_H_ */

@@ -99,19 +99,26 @@ void config_uart()
 int main(void)
 {
     /* Configure board. */
-        SEGGER_RTT_WriteString(0, "HOLA");
+        SEGGER_RTT_WriteString(0, "HOLA \n");
         bsp_board_init(BSP_INIT_LEDS);
 	bsp_board_leds_off();
 	nrf_delay_ms(500);
 	bsp_board_leds_on();
 	//Uart configuration
 	config_uart();
+
+        //Initialization
         gt511c3_initialize(); 
         gt511c3_reset_data();
-        identification_enroll_user(1);
-        gt511c3_deinitialize();
-        gt511c3_initialize();
-        identification_check(1);
+        gt511c3_enroll_user(1);
+        //Permanent configuration tets
+//        gt511c3_deinitialize();
+//        gt511c3_initialize();
+//        identification_check(1);
+        gt511c3_identify_finger();
+        printf("Number of fingerprints enrolled %d \n",touch_enrolled_count());
+        gt511c3_reset_data();
+        printf("Number of fingerprints enrolled %d \n",touch_enrolled_count());
         while (true)
         {
             for (int i = 0; i < LEDS_NUMBER; i++)
